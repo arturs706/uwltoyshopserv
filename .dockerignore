@@ -1,0 +1,4 @@
+/server/target
+.dockerignore
+.git
+.gitignore
