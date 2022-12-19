@@ -2,7 +2,7 @@ services:
   - type: web
     name: rustserver-dc
     env: docker
-    repo: https://github.com/arturs706/dockerserv.git
+    repo: https://github.com/arturs706/uwltoyshopserv.git
     region: frankfurt
     branch: main
     plan: free
