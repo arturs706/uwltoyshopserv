@@ -66,7 +66,6 @@ match cached_product {
 
         (StatusCode::OK, Json(json!({
             "product": cached_product,
-            "message": "Cached products"
         })))
     },
     Err(_) => {
@@ -122,7 +121,6 @@ match cached_product {
 
         (StatusCode::OK, Json(json!({
             "product": cached_product,
-            "message": "Cached version"
         })))
     },
     Err(_) => {

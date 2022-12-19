@@ -1,6 +1,5 @@
 use axum::{routing::{get, post, put, delete},Router, middleware};
 use dotenv::dotenv;
-use redis::Connection;
 use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 use tower_http::cors::CorsLayer;
 use http::Method;
@@ -55,13 +54,6 @@ pub struct RedisClient {
     pub redis: redis::Client
 }
 
-//add mkcert to the project to read the ssl certificate
-//
-
-
-
-
-
 #[tokio::main]
 async fn main() {
     dotenv().ok();
@@ -81,7 +73,6 @@ async fn main() {
 
 async fn connect_to_db(database_url: String) -> Pool<Postgres> {
     for _i in 0..5 {
-        //wait for 5 seconds before retrying
         tokio::time::sleep(std::time::Duration::from_secs(5)).await;
         let pool = PgPoolOptions::new()
         .max_connections(5)
